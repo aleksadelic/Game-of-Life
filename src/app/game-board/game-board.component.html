@@ -1,5 +1,9 @@
 <canvas #board></canvas>
-<br>
-<button (click)="start()">Start</button>
-<button (click)="stop()">Stop</button>
-<button (click)="next()">Next</button>
+<div class="option">
+    <button mat-raised-button color="primary" (click)="start()" style="margin-right: 10px;">Start</button>
+    <button mat-raised-button color="primary" (click)="stop()" style="margin-right: 10px;">Stop</button>
+    <button mat-raised-button color="primary" (click)="next()" style="margin-right: 10px;">Next</button>
+    <button mat-raised-button color="primary" (click)="reset()" style="margin-right: 10px;">Reset</button>
+    <br><label style="margin-top: 13px;">Speed: {{speed}}&nbsp;</label>
+    <mat-slider (change)="setSpeed($event)" color="primary" min="1" max="100" step="1"></mat-slider>
+</div>

@@ -1,3 +1,8 @@
 canvas {
     border: solid black 1px;
 }
+
+.option {
+    display: flex;
+    justify-content: center;
+}

@@ -15,15 +15,15 @@ export class GameBoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.canvas.nativeElement.width = 400;
-    this.canvas.nativeElement.height = 400;
+    this.canvas.nativeElement.width = this.canvasWidth;
+    this.canvas.nativeElement.height = this.canvasHeight;
 
     this.ctx = this.canvas.nativeElement.getContext('2d');
 
     this.createBoard();
   }
 
-  canvasWidth: number = 400;
+  canvasWidth: number = 600;
   canvasHeight: number = 400;
   resolution: number = 10;
 
@@ -42,7 +42,6 @@ export class GameBoardComponent implements OnInit {
       }
     }
     this.render();
-    this.play();
   }
 
   render() {
@@ -97,13 +96,15 @@ export class GameBoardComponent implements OnInit {
 
   async play() {
     while (this.stopped == false) {
-      await new Promise(f => setTimeout(f, 1000));
+      await new Promise(f => setTimeout(f, this.delay));
       this.nextGeneration();
       this.render();
     }
   }
 
   stopped: boolean = true;
+  speed: number = 10;
+  delay: number = 5000 / this.speed;
 
   start() {
     this.stopped = false;
@@ -117,6 +118,15 @@ export class GameBoardComponent implements OnInit {
   next() {
     this.nextGeneration();
     this.render();
+  }
+
+  setSpeed(event) {
+    this.speed = event.value;
+    this.delay = 5000 / this.speed;
+  }
+
+  reset() {
+    this.createBoard();
   }
 
 }
