@@ -1,4 +1,4 @@
-# GameOfLife
+# Game of Life
 
 A visual simulation of Conway's Game of Life.
 
