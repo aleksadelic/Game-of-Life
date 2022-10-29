@@ -1,5 +1,9 @@
 # GameOfLife
 
+A visual simulation of Conway's Game of Life.
+
+![](https://github.com/aleksadelic/Game-of-Life/blob/main/game-of-life.gif)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
